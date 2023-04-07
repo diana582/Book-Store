@@ -17,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
          leading: IconButton(icon: Icon(
           Icons.navigate_next), 
           onPressed: () { 
-            Text('diana');
+            
            },),
       ),
       body: Column(
@@ -48,24 +48,14 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(
             height: 10,
           ),
-          Padding(
+         Padding(
             padding: const EdgeInsets.only(left: 100, right: 100),
             child: TextFormField(
               decoration: InputDecoration(
                   labelText: 'Confirm Password', border: OutlineInputBorder()),
             ),
           ),
-          Padding(
-              padding: const EdgeInsets.only(
-                left: 150,
-              ),
-              child: Text(
-                'Dont have an account? Sign In',
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  fontWeight:FontWeight.w100
-                  ,fontSize: 10),
-              )),
+              
           SizedBox(
             height: 32,
           ),

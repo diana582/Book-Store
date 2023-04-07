@@ -77,9 +77,7 @@ class arrivals extends StatelessWidget {
                       ),
                           
                     ),
-                    SizedBox(
-                      width: 160,
-                    ),
+                   Spacer(),
                     Container(
                       width: 50,
                       height: 100,
@@ -145,9 +143,7 @@ class arrivals extends StatelessWidget {
                     ),
           
                   ),
-                  SizedBox(
-                    width: 160,
-                  ),
+                  Spacer(),
                   Container(
                     width: 50,
                     height: 100,
@@ -211,9 +207,7 @@ class arrivals extends StatelessWidget {
                     ),
           
                   ),
-                  SizedBox(
-                    width: 160,
-                  ),
+                  Spacer(),
                   Container(
                     width: 50,
                     height: 100,
@@ -277,9 +271,7 @@ class arrivals extends StatelessWidget {
                     ),
           
                   ),
-                  SizedBox(
-                    width: 160,
-                  ),
+                  Spacer(),
                   Container(
                     width: 50,
                     height: 100,
@@ -343,9 +335,7 @@ class arrivals extends StatelessWidget {
                     ),
           
                   ),
-                  SizedBox(
-                    width: 160,
-                  ),
+                  Spacer(),
                   Container(
                     width: 50,
                     height: 100,
@@ -409,9 +399,7 @@ class arrivals extends StatelessWidget {
                     ),
           
                   ),
-                  SizedBox(
-                    width: 160,
-                  ),
+                  Spacer(),
                   Container(
                     width: 50,
                     height: 100,

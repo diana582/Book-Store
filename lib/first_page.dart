@@ -7,7 +7,9 @@ class slideviewpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
      
-      body: SafeArea(
+      body: Padding(
+       padding: EdgeInsets.all(10),
+       
         child: Column(
           children: [
             Padding(
@@ -45,9 +47,10 @@ class slideviewpage extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
-                  width: 270,
-                ),
+                Spacer(),
+                //SizedBox(
+                  //width: 270,
+                //),
                 IconButton(onPressed: (){
             
                 }, icon: Icon(Icons.qr_code)),
@@ -72,9 +75,7 @@ class slideviewpage extends StatelessWidget {
                       fontSize: 30),)
                     ],
                   ),
-                  SizedBox(
-                    width: 250,
-                  ),
+                  Spacer(),
                   Column(
                     children: [
                       GestureDetector(
@@ -92,48 +93,45 @@ class slideviewpage extends StatelessWidget {
               
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      width: 150,
-                      height: 200,
-                      child: Image.network('https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/916oR7ry1tL.jpg'),
-                        
-                    )
-                  ],
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      width: 150,
-                      height: 200,
-                      child: Image.network('https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41QPk9FeVPL.jpg'),
-                        
-                    )
-                  ],
-                ), 
-                SizedBox(
-                  width: 10,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      width: 150,
-                      height: 200,
-                      child: Image.network('https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/712xAjBe0ML.jpg'),
-                        
-                    )
-                  ],
-                ), 
-              ],
-            ),
+       
+
+
+    Column(
+      children: [
+        LimitedBox(
+    maxHeight: 200,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      children: 
+        List.generate(10, (index) {
+          return Container(
+    width: 150,
+    height: 250,
+    
+    decoration: BoxDecoration(
+       borderRadius: BorderRadius.circular(10),image: DecorationImage(
+      
+      image: NetworkImage('https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/916oR7ry1tL.jpg'),),),
+    );
+        } 
+
+        ),
+      
+    ),
+    )
+    
+      ],
+    ),
+
+
+
+
+
+
+
+
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
@@ -208,6 +206,7 @@ class slideviewpage extends StatelessWidget {
                  Padding(
                    padding: const EdgeInsets.all(8.0),
                    child: Card(
+                    color: Colors.amber,
                     elevation: 4,
                     margin: EdgeInsets.all(0),
                     clipBehavior: Clip.antiAlias,
@@ -273,6 +272,7 @@ class slideviewpage extends StatelessWidget {
           
         ),
       ) ,
+      
     );
   }
 }

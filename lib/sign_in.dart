@@ -1,15 +1,18 @@
+import 'package:book_store/controllers/sign_up_controller.dart';
 import 'package:flutter/material.dart';
 
 
 
-class LoginPage extends StatefulWidget {
+class LoginPage2 extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _LoginPage2State createState() => _LoginPage2State();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPage2State extends State<LoginPage2> {
   @override
   Widget build(BuildContext context) {
+    var passwordController = TextEditingController();
+    var emailController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 40, 38, 38),
@@ -17,13 +20,13 @@ class _LoginPageState extends State<LoginPage> {
          leading: IconButton(icon: Icon(
           Icons.navigate_next), 
           onPressed: () { 
-            Text('diana');
+            
            },),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Sign Up',
+          Text('Sign In',
           style: TextStyle(
             fontSize: 30),),
           
@@ -33,14 +36,16 @@ class _LoginPageState extends State<LoginPage> {
           Padding(
             padding: const EdgeInsets.only(left: 100, right: 100),
             child: TextFormField(
+              controller: emailController,
               decoration: InputDecoration(
-                  labelText: 'Username', border: OutlineInputBorder()),
+                  labelText: 'Email', border: OutlineInputBorder()),
             ),
           ),
           SizedBox(height: 16),
           Padding(
             padding: const EdgeInsets.only(left: 100, right: 100),
             child: TextFormField(
+              controller: passwordController,
               decoration: InputDecoration(
                   labelText: 'Password', border: OutlineInputBorder()),
             ),
@@ -53,12 +58,17 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.only(
                 left: 150,
               ),
-              child: Text(
-                'Dont have an account? Sign In',
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  fontWeight:FontWeight.w100
-                  ,fontSize: 10),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.of(context).pushNamed('screen_5');
+                },
+                child: Text(
+                  'Dont have an account? Sign In',
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    fontWeight:FontWeight.w100
+                    ,fontSize: 10),
+                ),
               )),
           SizedBox(
             height: 32,
@@ -73,8 +83,10 @@ class _LoginPageState extends State<LoginPage> {
               onPrimary: Colors.white,
             ),
             onPressed: () {
-              Navigator.of(context).pushNamed('screen_2');
-              
+             //Navigator.of(context).pushNamed('screen_2');
+             SignUpController.instance.register(emailController.text.trim(), passwordController.text.trim());
+
+
             },
             child: Padding(
               padding: const EdgeInsets.only(left: 110, right: 110),
